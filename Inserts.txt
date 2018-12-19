@@ -1,0 +1,17 @@
+INSERT INTO `Clientes` (`id`,`nombre`) VALUES (1,'Alexis J. Vang');
+INSERT INTO `Clientes` (`id`,`nombre`) VALUES (2,'Randall L. Peterson');
+INSERT INTO `Clientes` (`id`,`nombre`) VALUES (3,'Jolie P. Sutton');
+INSERT INTO `Clientes` (`id`,`nombre`) VALUES (4,'Bevis R. Berg');
+INSERT INTO `Clientes` (`id`,`nombre`) VALUES (5,'Ignatius H. Burton');
+INSERT INTO `Clientes` (`id`,`nombre`) VALUES (6,'Allen V. Strong');
+INSERT INTO `Clientes` (`id`,`nombre`) VALUES (7,'Benjamin W. Stein');
+INSERT INTO `Clientes` (`id`,`nombre`) VALUES (8,'Jemima I. Franklin');
+INSERT INTO `Clientes` (`id`,`nombre`) VALUES (9,'Allegra N. Dixon');
+INSERT INTO `Clientes` (`id`,`nombre`) VALUES (10,'David X. Hyde');
+INSERT INTO `Clientes` (`id`,`nombre`) VALUES (11,'Samuel D. Ellis');
+INSERT INTO `Clientes` (`id`,`nombre`) VALUES (12,'Shea V. Carson');
+INSERT INTO `Clientes` (`id`,`nombre`) VALUES (13,'Reese X. Thomas');
+INSERT INTO `Clientes` (`id`,`nombre`) VALUES (14,'Felix O. Roberson');
+INSERT INTO `Clientes` (`id`,`nombre`) VALUES (15,'Tatyana W. Clayton');
+INSERT INTO `Clientes` (`id`,`nombre`) VALUES (16,'Maggie K. Klein');
+INSERT INTO `Clientes` (`id`,`nombre`) VALUES (17,'Ivor G. Mann');

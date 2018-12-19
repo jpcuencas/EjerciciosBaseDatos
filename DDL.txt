@@ -1,0 +1,90 @@
+Drop table LineaFactura;
+Drop table LineaPedido;
+Drop table Pedido;
+Drop table Factura;
+Drop table Clientes;
+Drop table Proveedores;
+Drop table Produtos;
+Drop table UnidadMedida;
+
+CREATE TABLE Clientes
+( id number(10) NOT NULL,
+  nombre varchar2(50) NOT NULL,
+  email varchar2(50) NOT NULL,
+  CONSTRAINT id_pk1 PRIMARY KEY (id)
+);
+
+CREATE TABLE Proveedores
+( id number(10) NOT NULL,
+  nombre varchar2(50) NOT NULL,
+  email varchar2(50) NOT NULL,
+  CONSTRAINT id_pk2 PRIMARY KEY (id)
+);
+
+CREATE TABLE UnidadMedida
+( id number(10) NOT NULL,
+  nombre varchar2(50) NOT NULL,
+  CONSTRAINT id_pk3 PRIMARY KEY (id)
+);
+
+CREATE TABLE Produtos
+( id number(10) NOT NULL,
+  nombre varchar2(50) NOT NULL,
+  valorUnidad number(10),
+  cantidad number(6),
+ idUnidadMedida number(10) NOT NULL,
+  CONSTRAINT id_pk4 PRIMARY KEY (id),
+  CONSTRAINT fk_unidadMedida1
+    FOREIGN KEY (idUnidadMedida)
+    REFERENCES UnidadMedida(id)
+);
+CREATE TABLE Pedido
+( id number(10) NOT NULL,
+  nombre varchar2(50) NOT NULL,
+ idProveedor number(10) NOT NULL,
+  CONSTRAINT id_pk5 PRIMARY KEY (id),
+  CONSTRAINT fk_Proveedor1
+    FOREIGN KEY (idProveedor)
+    REFERENCES Proveedores(id)
+);
+
+CREATE TABLE LineaPedido
+( id number(10) NOT NULL,
+  costeUnidad number(10),
+  cantidad number(6),
+ idProducto number(10) NOT NULL,
+ idPedido number(10) NOT NULL,
+  CONSTRAINT id_pk6 PRIMARY KEY (id),
+  CONSTRAINT fk_pedido1
+    FOREIGN KEY (idPedido)
+    REFERENCES Pedido(id),
+  CONSTRAINT fk_producto2
+    FOREIGN KEY (idProducto)
+    REFERENCES Produtos(id)
+	
+);
+
+CREATE TABLE Factura
+( id number(10) NOT NULL,
+  nombre varchar2(50) NOT NULL,
+ idCliente number(10) NOT NULL,
+  CONSTRAINT id_pk7 PRIMARY KEY (id),
+  CONSTRAINT fk_Cliente
+    FOREIGN KEY (idCliente)
+    REFERENCES Clientes(id)
+);
+
+CREATE TABLE LineaFactura
+( id number(10) NOT NULL,
+  precioUnidad number(10),
+  cantidad number(6),
+ idProducto number(10) NOT NULL,
+ idFactura number(10) NOT NULL,
+  CONSTRAINT id_pk2 PRIMARY KEY (id),
+  CONSTRAINT fk_factura1
+    FOREIGN KEY (idFactura)
+    REFERENCES Factura(id),
+  CONSTRAINT fk_producto3
+    FOREIGN KEY (idProducto)
+    REFERENCES Produtos(id)
+);
